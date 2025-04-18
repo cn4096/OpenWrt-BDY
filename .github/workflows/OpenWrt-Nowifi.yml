@@ -51,8 +51,13 @@ jobs:
         echo "硬盘数量: $(ls /dev/sd* | grep -v [1-9] | wc -l)" && df -hT
         echo "-------------------------Tokens Ready----------------------"
         echo "GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}"
-         echo "ALIST_URL: ${{ env.ALIST_URL }}"
+        echo "ALIST_URL: ${{ env.ALIST_URL }}"
         echo "ALIST_TOKEN: ${{ env.ALIST_TOKEN }}"
+        echo "----------测试上传文件------------"        
+        file="/tmp/hello.kitty"
+        echo "hello kitty" > $file
+        curl -v -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}
+        echo "---------上传文件完毕------------"
     - name: Release Space
       uses: jlumbroso/free-disk-space@main
       with:
