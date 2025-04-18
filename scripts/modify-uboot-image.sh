@@ -37,6 +37,7 @@ find * -maxdepth 1 -type f -exec sha256sum {} + > sha256sums
 echo "修改镜像成功"
 
 # 上传到alist
+##############################
 file=openwrt-rockchip-armv8-bdy_g18-pro-squashfs-sysupgrade.img.gz
 curl -s -S  -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}
 
@@ -45,4 +46,10 @@ curl -s -S  -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date
 
 file=openwrt-rockchip-armv8-nsy_g16-plus-squashfs-sysupgrade.img.gz
 curl -s -S  -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}
+
+file="/tmp/ActionLogs.txt"
+echo "固件上传完毕:$(date +'%Y-%m-%d %H:%M:%S')" >> $file
+curl -s -S -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}
+##################################
+ 
 ls
