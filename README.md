@@ -7,7 +7,7 @@
 + 在本项目的settings/secrets/actions 增加
 + ALIST_URL 这个是是webdav的网址 不要带http
 + ALIST_TOKEN 这个是Webdav的用户名和密码
-
++ 回国的家在 `/actions/lede/nsy-bdy/日期/`
 ## 
 <div align="center">
 <img width="768" src="https://cdn.jsdelivr.net/gh/haiibo/OpenWrt/images/openwrt.png"/>
