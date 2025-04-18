@@ -3,10 +3,10 @@ name: OpenWrt Nowifi
 on:
   workflow_dispatch:
   schedule:
-    - cron: 0 20 * * *
+    - cron: 0 20 15 * *
 
 env:
-  REPO_URL: https://github.com/xiaomeng9597/lede
+  REPO_URL: https://github.com/cn4096/lede
   REPO_BRANCH: master
   CONFIG_FILE: configs/armv8-nowifi.config
   DIY_SCRIPT: diy-mini2.sh
