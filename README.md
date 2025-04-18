@@ -1,3 +1,9 @@
+## 20250418 ++ 固件传至Alist
+
+在本项目的settings/secrets/actions 增加
+ALIST_URL 以及 ALIST_TOKEN ,其中URL是webdav的网址,TOKEN是用户名和密码
+
+## 
 <div align="center">
 <img width="768" src="https://cdn.jsdelivr.net/gh/haiibo/OpenWrt/images/openwrt.png"/>
 <h1>OpenWrt — 多设备固件云编译</h1>
