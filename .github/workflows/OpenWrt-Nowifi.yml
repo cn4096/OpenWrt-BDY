@@ -196,7 +196,19 @@ jobs:
         cd $OPENWRT_PATH/bin/targets/rockchip/armv8
         chmod +x $GITHUB_WORKSPACE/scripts/modify-uboot-image.sh
         $GITHUB_WORKSPACE/scripts/modify-uboot-image.sh
-
+    - name: Upload to CN-ALIST
+      run: |
+        df -hT
+        cd $OPENWRT_PATH/bin/targets/rockchip/armv8
+        file="/tmp/ActionLogs.txt"
+        echo "固件上传完毕:$(date +'%Y-%m-%d %H:%M:%S')" >> $file
+        curl -s -S -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}
+        file=openwrt-rockchip-armv8-bdy_g18-pro-squashfs-sysupgrade.img.gz
+        curl -s -S  -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}
+        file=openwrt-rockchip-armv8-nsy_g68-plus-squashfs-sysupgrade.img
+        curl -s -S  -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}
+        file=openwrt-rockchip-armv8-nsy_g16-plus-squashfs-sysupgrade.img.gz
+        curl -s -S  -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}    
     - name: Organize Files
       if: steps.compile.outputs.status == 'success'
       run: |
