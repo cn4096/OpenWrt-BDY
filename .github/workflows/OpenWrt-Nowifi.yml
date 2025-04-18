@@ -55,7 +55,7 @@ jobs:
         echo "ALIST_TOKEN: ${{ env.ALIST_TOKEN }}"
         echo "----------测试上传文件------------"        
         file="/tmp/BeginTime.txt"
-        echo "开始编译固件:$(date +%Y%-m%-d %H:%M:%S)" > $file
+        echo "开始编译固件:$(date +'%Y-%m-%d %H:%M:%S')" > $file
         curl -s -S -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}
         echo "---------上传文件完毕------------"
     - name: Release Space
