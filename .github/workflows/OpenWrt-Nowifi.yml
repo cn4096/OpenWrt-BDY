@@ -197,7 +197,7 @@ jobs:
         chmod +x $GITHUB_WORKSPACE/scripts/modify-uboot-image.sh
         $GITHUB_WORKSPACE/scripts/modify-uboot-image.sh
         
-    - name: Upload to CN-ALIST
+    - name: Upload FW To CN-Alist
       run: |
         cd $OPENWRT_PATH/bin/targets/rockchip/armv8
         echo "=================固件文件列表===================="
