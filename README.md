@@ -6,7 +6,7 @@
 + 开国内Alist的Webdav,没有公网就FRPC,或者IPV6
 + 在本项目的settings/secrets/actions 增加
 + ALIST_URL 这个是是webdav的网址 不要带http
-+ ALIST_TOKEN 这个是Webdav的用户名和密码
++ ALIST_TOKEN 这个是Webdav的用户名和密码 (用户名和密码我设置一样的,只要填密码就可以了)
 + 回国的家在 `/actions/lede/nsy-bdy/日期/`
 ## 
 <div align="center">
