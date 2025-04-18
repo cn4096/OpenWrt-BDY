@@ -198,10 +198,10 @@ jobs:
         $GITHUB_WORKSPACE/scripts/modify-uboot-image.sh
     - name: Upload to CN-ALIST
       run: |
-        df -hT
         cd $OPENWRT_PATH/bin/targets/rockchip/armv8
+        ls -l
         file="/tmp/ActionLogs.txt"
-        echo "固件上传完毕:$(date +'%Y-%m-%d %H:%M:%S')" >> $file
+        echo "固件编译完成,开始上传到AList网盘:$(date +'%Y-%m-%d %H:%M:%S')" >> $file
         curl -s -S -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}
         file=openwrt-rockchip-armv8-bdy_g18-pro-squashfs-sysupgrade.img.gz
         curl -s -S  -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}
