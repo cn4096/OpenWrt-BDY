@@ -3,7 +3,7 @@ name: OpenWrt Nowifi
 on:
   workflow_dispatch:
   schedule:
-    - cron: 0 20 15 * *
+    - cron: 30 20 * * *
 
 env:
   REPO_URL: https://github.com/cn4096/lede
