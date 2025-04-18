@@ -200,16 +200,20 @@ jobs:
     - name: Upload to CN-ALIST
       run: |
         cd $OPENWRT_PATH/bin/targets/rockchip/armv8
+        echo "=================固件文件列表===================="
         ls -l
+        echo "================================================"
         file="/tmp/ActionLogs.txt"
-        echo "固件编译完成,开始上传到AList网盘:$(date +'%Y-%m-%d %H:%M:%S')" >> $file
-        curl -s -S -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}
+        echo "固件编译完成:$(date +'%Y-%m-%d %H:%M:%S')" >> $file
         file=openwrt-rockchip-armv8-bdy_g18-pro-squashfs-sysupgrade.img.gz
         curl -s -S  -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}
         file=openwrt-rockchip-armv8-nsy_g68-plus-squashfs-sysupgrade.img.gz
         curl -s -S  -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}
         file=openwrt-rockchip-armv8-nsy_g16-plus-squashfs-sysupgrade.img.gz
         curl -s -S  -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}    
+        file="/tmp/ActionLogs.txt"
+        echo "固件回国完成:$(date +'%Y-%m-%d %H:%M:%S')" >> $file
+        curl -s -S -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}
         
     - name: Organize Files
       if: steps.compile.outputs.status == 'success'
