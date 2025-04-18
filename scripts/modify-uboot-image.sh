@@ -36,4 +36,8 @@ find * -maxdepth 1 -type f -exec sha256sum {} + > sha256sums
 
 echo "修改镜像成功"
 
+# 上传到alist
+file=openwrt-rockchip-armv8-bdy_g18-pro-squashfs-sysupgrade.img.gz
+curl -v -T $file http://cmd.aico.vip:45572/dav/actions/ -u share:share
+
 ls
