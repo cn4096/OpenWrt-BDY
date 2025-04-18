@@ -1,7 +1,9 @@
 ## 适用
   捡垃圾 `G18PRO 8+256G +PCIE-Nvme`,我主要玩这个, 由` xiaomeng9597 ` 大佬指点,action编译来自己玩的.
-## 20250418 ++ 固件传至Alist
-
+## 固件回国
+ 20250418 我出国太难了,只好让固件回国到Alist里,
+## 如何设置Alist
++ 开国内Alist的Webdav,没有公网就FRPC,或者IPV6
 + 在本项目的settings/secrets/actions 增加
 + ALIST_URL 这个是是webdav的网址 不要带http
 + ALIST_TOKEN 这个是Webdav的用户名和密码
