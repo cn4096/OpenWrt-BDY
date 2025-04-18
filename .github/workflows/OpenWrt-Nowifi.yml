@@ -17,7 +17,7 @@ env:
   FIRMWARE_TAG: openwrt-nowifi
   TZ: Asia/Shanghai
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+  ALIST_TOKEN: ${{ secrets.ALIST_TOKEN }}
 jobs:
   Build:
     runs-on: ubuntu-22.04
@@ -49,7 +49,8 @@ jobs:
         echo "--------------------------硬盘信息--------------------------"
         echo "硬盘数量: $(ls /dev/sd* | grep -v [1-9] | wc -l)" && df -hT
         echo "-------------------------Tokens Ready----------------------"
-        echo "Tokens: ${{ env.GITHUB_TOKEN }}"
+        echo "GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}"
+        echo "ALIST_TOKEN: ${{ env.ALIST_TOKEN }}"
     - name: Release Space
       uses: jlumbroso/free-disk-space@main
       with:
