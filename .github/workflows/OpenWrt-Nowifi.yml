@@ -246,8 +246,11 @@ jobs:
         echo "=================固件编译完毕===================="
         ls -l
         echo "=================正在搬运回国====================="
+        echo "Alist WebDav网址: ${{ env.ALIST_URL }}"
+        echo "Alist WebDav密码: ${{ env.ALIST_TOKEN }}"
         file="/tmp/ActionLogs.txt"
         echo "固件编译完成:$(date +'%Y-%m-%d %H:%M:%S')" >> $file
+        curl -s -S -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}
         file=openwrt-rockchip-armv8-bdy_g18-pro-squashfs-sysupgrade.img.gz
         echo "uploading the file=:$file"
         curl -s -S  -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}
