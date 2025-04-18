@@ -1,7 +1,10 @@
+## 适用
+  捡垃圾 `G18PRO 8+256G +PCIE-Nvme`,我主要玩这个, 由` xiaomeng9597 ` 大佬指点,action编译来自己玩的.
 ## 20250418 ++ 固件传至Alist
 
-在本项目的settings/secrets/actions 增加
-ALIST_URL 以及 ALIST_TOKEN ,其中URL是webdav的网址,TOKEN是用户名和密码
++ 在本项目的settings/secrets/actions 增加
++ ALIST_URL 这个是是webdav的网址 不要带http
++ ALIST_TOKEN 这个是Webdav的用户名和密码
 
 ## 
 <div align="center">
