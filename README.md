@@ -1,6 +1,6 @@
 ## 适用
   农商云&彼度云pcdn,我是捡垃圾这款`G18PRO 8+256G +PCIE-Nvme`,项目由` xiaomeng9597 ` 大佬指点,action编译来自己玩的.
-## 简洁
+## 精简
   只有`docker+frp+smba+ftp` ,其他没有了.
 ## 固件回国
  20250418 我出国太难了,只好让固件回国到Alist里,
