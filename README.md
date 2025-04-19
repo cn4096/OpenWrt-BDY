@@ -3,7 +3,7 @@
 ## 精简
   只有`docker+frp+smba+ftp` ,其他没有了.
 ## 固件回国
- 20250418 我出国太难了,只好让固件回国到Alist里,
+ 20250418++ 我出国太难了,只好让固件回国到Alist里,
 ## 如何设置Alist
 + 开国内Alist的Webdav,没有公网就FRPC,或者IPV6
 + 在本项目的settings/secrets/actions 增加
