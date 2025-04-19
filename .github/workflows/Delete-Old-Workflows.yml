@@ -3,7 +3,7 @@ name: Delete Old Workflows
 on:
   workflow_dispatch:
   schedule:
-    - cron: 0 3 * * *
+    - cron: 0 3 10 * *
 
 jobs:
   Cleaning:
@@ -35,6 +35,8 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         retain_days: 7
         keep_minimum_runs: 0
+      run: |
+        echo "删除旧的工作流文件"
 
     - name: Delete Old Releases
       uses: dev-drprasad/delete-older-releases@master
@@ -43,3 +45,5 @@ jobs:
         delete_tags: true
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        echo "删除旧的发行版文件"
