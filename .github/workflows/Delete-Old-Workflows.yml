@@ -26,7 +26,7 @@ jobs:
         echo "--------------------------硬盘信息--------------------------"
         echo "硬盘数量: $(ls /dev/sd* | grep -v [1-9] | wc -l)" && df -hT
         echo "-------------------------Tokens Ready----------------------"
-        echo "GITHUB_TOKEN: ${{ env.GITHUB_TOKEN }}"
+        echo "GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}"
         echo "----------开始清空旧的数据------------"        
         
     - name: Delete Old Workflows
