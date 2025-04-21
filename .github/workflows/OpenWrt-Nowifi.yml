@@ -250,17 +250,17 @@ jobs:
         echo "Alist WebDav密码: ${{ env.ALIST_TOKEN }}"
         file="/tmp/ActionLogs.txt"
         echo "固件编译完成:$(date +'%Y-%m-%d %H:%M:%S')" >> $file
-        curl -s -S -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}
+        curl -s -S --max-time 1200 -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}
         file=openwrt-rockchip-armv8-bdy_g18-pro-squashfs-sysupgrade.img.gz
         echo "uploading the file:$file"
-        curl -s -S  -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}
+        curl -s -S  --max-time 1200 -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}
         file=openwrt-rockchip-armv8-nsy_g68-plus-squashfs-sysupgrade.img.gz
         echo "uploading the file:$file"
-        curl -s -S  -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}
+        curl -s -S --max-time 1200 -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}
         file=openwrt-rockchip-armv8-nsy_g16-plus-squashfs-sysupgrade.img.gz
         echo "uploading the file:$file"
-        curl -s -S  -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}    
+        curl -s -S --max-time 1200 -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}    
         file="/tmp/ActionLogs.txt"
         echo "固件回国完成:$(date +'%Y-%m-%d %H:%M:%S')" >> $file
-        curl -s -S -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}
+        curl -s -S --max-time 1200 -T $file http://${{ env.ALIST_URL }}/dav/actions/lede/nsy-bdy/$(date +%Y%m%d)/ -u ${{ env.ALIST_TOKEN }}:${{ env.ALIST_TOKEN }}
         echo "=================搬运回国完毕====================="
