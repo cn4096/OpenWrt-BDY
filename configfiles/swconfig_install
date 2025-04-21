@@ -21,6 +21,8 @@ EOF
                 /etc/init.d/network restart
                 /etc/init.d/dnsmasq restart
                 echo "交换机初始化OK, 4wlan 1lan，最右边端口为wlan"
+                echo "Docker 启动后,重启一下Firewall By cn4096"
+                grep -q "/etc/init.d/firewall restart" /etc/init.d/dockerd || sed -i '/procd_close_instance/a /etc/init.d/firewall restart' /etc/init.d/dockerd
             else
                 echo "交换机已初始化过，不再重复执行"
             fi
